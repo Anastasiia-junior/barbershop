@@ -1,0 +1,250 @@
+/*Variables*/
+:root{
+    --basic-black: #000000;
+    --basic-extra-dark: #242424;
+    --basic-dark: #aba9a7;
+    --basic-neutral: #e5e5e5;
+    --basic-extra-light: #f8f5f2;
+    --basic-white: #ffffff;
+
+    --special: #663d15;
+}
+
+/*Global*/
+body {
+    min-width: 960px;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "PT Sans Narrow", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--basic-white);
+    text-transform: uppercase;
+
+    background-color: var(--basic-black);
+    background-image: url(../img/squoosh/main-background.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+} */
+/* Navigation */ 
+
+.main-navigation {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: var(--basic-white);
+}
+.main-nav-wrapper {
+    background-color: var(--basic-black);
+}
+.site-navigation li{
+    list-style-type: none;
+}
+
+.site-navigation-curent a:not([href]) {
+    background-color: var(--basic-black);
+}
+
+.site-navigation a,
+.user-navigation a {
+    color: var(--basic-white);
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus,
+.user-navigation a:hover, 
+.user-navigation a:focus {
+    background-color: var(--basic-extra-dark);
+}
+
+/* Features */
+
+.features-list {
+    list-style-type: none;
+}
+
+.fetures-item {
+    text-align: center;
+}
+
+.fetures-item h3 {
+    font-size: 30px;
+    line-height: 42px;
+}
+
+/* Index Sections*/
+
+.index-sections {
+    color: var(--basic-black);
+    background-color: var(--basic-extra-light);
+    background-image: url(../img/phon.jpg);
+}
+
+.index-sections h2 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.news-list {
+    list-style-type: none;
+}
+
+.gallery-container {
+    background-color: var(--basic-dark);
+    border: 7px solid var(--basic-white)
+}
+
+/* Buttons */
+
+.button {
+    font: inherit;
+    text-align: center;
+    color: var(--basic-white);
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-color: var(--basic-black);
+    border: none;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    background-color: var(--special);
+}
+
+.button:disabled,
+.button.disabled {
+    cursor: default;
+    opacity: 0,5;
+    background-color: var(--basic-dark);
+}
+
+/* Appointment */
+
+.appointment-item input{
+    font: inherit;
+    background-color: transparent;
+    border: 2px solid var(--basic-black);
+}
+
+.appointment-item input:focus {
+    border-color: var(--special);
+}
+
+/* Footer */
+
+.main-footer {
+    background-color: var(--basic-extra-dark);
+    background-image: url(../img/black-phon.jpg);
+}
+
+.main-footer a {
+    color: var(--basic-white);
+}
+.main-footer li {
+    list-style-type: none;
+}
+.footer-adress a {
+    text-decoration: underline;
+}
+.footer-adress a:hover,
+.footer-adress a:focus {
+    text-decoration: none;
+}
+
+.footer-social {
+    text-align: center;
+}
+
+.footer-social ul {
+    list-style: none;
+}
+
+.footer-social h2 {
+    font-size: 14px;
+}
+.social-button {
+    color: inherit;
+}
+
+.social-button:hover, 
+.social-button:focus {
+    background-color: var(--basic-white);
+    color: var(--basic-black);
+}
+
+.footer-copyright .button:hover,
+.footer-copyright .button:focus {
+    color: var(--basic-black);
+    background-color: var(--basic-white);
+}
+
+/* Modal */
+
+.modal {
+    background-color: var(--basic-extra-light);
+    color: var(--basic-black);
+    background-image: url(../img/phon.jpg);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0,7);
+}
+.modal-login h2 {
+    font-size: 32px;
+    line-height: 42px;
+}
+.login-form input[type="email"], 
+.login-form input[type="password"] {
+    font: inherit;
+    color: var(--basic-black);
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid var(--basic-black);
+}
+.login-form input:focus {
+    border-color: var(--special);
+}
+
+.login-icon-user {
+    background-image: url(../img/user.svg);
+    background-position: 270px center;
+    background-repeat: no-repeat;
+}
+.login-icon-password {
+    background-image: url(../img/lock.svg);
+    background-position: 270px center;
+    background-repeat: no-repeat;
+}
+
+/* Restore */
+
+.restore {
+    color: var(--basic-black);
+    text-decoration: underline;
+}
+.restore:hover, 
+.restore:focus {
+    text-decoration: none;
+}
