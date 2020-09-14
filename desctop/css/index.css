@@ -100,7 +100,7 @@ input[type="radio"].visually-hidden {
 .button:disabled,
 .button.disabled {
     cursor: default;
-    /* Почему-то не применяется свойство*/ opacity: 0,5;
+    opacity: 0.5;
     background-color: var(--basic-black);
 } 
 
@@ -295,7 +295,7 @@ input[type="radio"].visually-hidden {
 }
 
 .gallery-figure {
-    height: 164px;
+    height: 178px;
     margin: 0;
     background-color: var(--basic-dark);
     border: 7px solid var(--basic-white)
@@ -467,15 +467,43 @@ input[type="radio"].visually-hidden {
 /* Modal */
 
 .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
     background-color: var(--basic-extra-light);
     color: var(--basic-black);
     background-image: url(../img/phon.jpg);
-    box-shadow: 0 30px 50px rgba(0, 0, 0, 0,7);
+    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.7);
+}
+
+.modal-map {
+    display: none;
+    width: 780px;
+    height: 573px;
+    border: 7px solid var(--basic-white);
+}
+
+.modal-map img {
+    display: none;
+}
+.modal-map iframe {
+    border: none;
+}
+
+.modal-login {
+    display: none;
+    width: 460px;
+    top: 120px;
+    bottom: auto;
+    padding: 50px 80px;
 }
 .modal-login h2 {
     margin: 0;
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 30px;
     line-height: 42px;
 }
 
@@ -484,9 +512,6 @@ input[type="radio"].visually-hidden {
     margin-bottom: 10px;
 }
 
-.modal-login .restore {
-    margin: 15px 0;
-}
 .login-form input[type="email"], 
 .login-form input[type="password"] {
     font: inherit;
@@ -494,6 +519,11 @@ input[type="radio"].visually-hidden {
     text-transform: uppercase;
     background-color: transparent;
     border: 2px solid var(--basic-black);
+    width: 100%;
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    padding-left: 15px;
 }
 .login-form input:focus {
     border-color: var(--special);
@@ -510,6 +540,38 @@ input[type="radio"].visually-hidden {
     background-repeat: no-repeat;
 }
 
+.login-password-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    width: 22px;
+    height: 22px;
+    border: none;
+    cursor: pointer;background-color: transparent;
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    width: 19px;
+    height: 3px;
+    background-color: var(--basic-dark);
+}
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
 /* Restore */
 
 .restore {
@@ -519,4 +581,11 @@ input[type="radio"].visually-hidden {
 .restore:hover, 
 .restore:focus {
     text-decoration: none;
+}
+
+.modal-login .button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
 }
