@@ -11,6 +11,12 @@
 }
 
 /*Global*/
+
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 body {
     min-width: 960px;
 
@@ -55,17 +61,49 @@ body {
     margin: 0 auto;
     padding: 0 10px;
 }
-/*
-.visually-hidden {
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
     border: 0;
     padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
-} */
+} 
+/* Buttons */
+
+.button {
+    display: inline-block;
+    margin-right:  16px;
+    padding: 10px 30px;
+    font: inherit;
+    text-align: center;
+    color: var(--basic-white);
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-color: var(--basic-black);
+    border: none;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    background-color: var(--special);
+}
+
+.button:disabled,
+.button.disabled {
+    cursor: default;
+    /* Почему-то не применяется свойство*/ opacity: 0,5;
+    background-color: var(--basic-black);
+} 
+
 /* Navigation */ 
 .main-header{
     margin-bottom: 80px;
@@ -96,7 +134,9 @@ body {
     width: 368px;
     height: 153px;
 }
-.site-navigation li{
+.site-navigation {
+    display: flex;
+    flex-wrap: wrap;
     width: 620px;
     margin: 0;
     padding: 0;
@@ -108,7 +148,28 @@ body {
 }
 
 .user-navigation .login-link {
+    position: relative;
     padding-left: 50px;
+}
+
+.login-link::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 24px;
+    opacity: 0.3;
+
+    width: 16px;
+    height: 18px;
+    background-image: url(../img/login.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.login-link:hover::before, 
+.login-link:active::before,
+.login-link:focus::before {
+    opacity: 1;
 }
 
 .site-navigation-curent a:not([href]) {
@@ -118,6 +179,8 @@ body {
 .site-navigation a,
 .user-navigation a {
     color: var(--basic-white);
+    display: block;
+    padding: 25px 20px;
 }
 
 .site-navigation a:hover,
@@ -146,8 +209,22 @@ body {
 }
 
 .fetures-item h3 {
+    position: relative;
+    margin: 0;
+    margin-bottom: 60px;
     font-size: 30px;
     line-height: 42px;
+}
+
+.fetures-item h3::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 47%;
+    width: 20px;
+    height: 20px;
+    background-color: var(--basic-white);
+    transform: rotate(45deg);
 }
 .fetures-item p {
     margin: 0 10px;
@@ -158,10 +235,15 @@ body {
 .index-sections {
     display: flex;
     justify-content: space-between;
+    padding: 50px 80px;
     margin-bottom: 35px;
     color: var(--basic-black);
     background-color: var(--basic-extra-light);
-    background-image: url(../img/phon.jpg);
+    background-image: 
+        url(../img/line.png),
+        url(../img/phon.jpg);
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
 }
 
 .index-sections h2 {
@@ -176,6 +258,9 @@ body {
 }
 
 .news-list {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -189,6 +274,24 @@ body {
 
 .gallery {
     width: 300px;
+    position: relative;
+}
+
+.gallery-button {
+    position: absolute;
+    box-sizing: border-box;
+    width: 140px;
+    bottom: 0;
+    margin: 0;
+}
+
+.gallery-button-back {
+    left: 0;
+}
+
+.gallery-button-next {
+    
+    right: 0;
 }
 
 .gallery-figure {
@@ -213,33 +316,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Buttons */
-
-.button {
-    display: inline-block;
-    margin-right:  16px;
-    font: inherit;
-    text-align: center;
-    color: var(--basic-white);
-    vertical-align: middle;
-    text-transform: uppercase;
-    background-color: var(--basic-black);
-    border: none;
-}
-
-.button:hover,
-.button:active,
-.button:focus {
-    background-color: var(--special);
-}
-
-.button:disabled,
-.button.disabled {
-    cursor: default;
-    opacity: 0,5;
-    background-color: var(--basic-dark);
-}
-
 /* Appointment */
 
 .appointment {
@@ -251,12 +327,31 @@ body {
     margin-bottom: 15px;
 }
 
+.appointment-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
 .appointment-item {
+    width: 140px;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
+.appointment-item label {
+    display: block;
+    margin-bottom: 9px;
+    margin-left: 15px;
+}
+
 .appointment-item input{
+    width: 100%;
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-bottom: 7px;
+    padding-left: 15px;
     font: inherit;
     background-color: transparent;
     border: 2px solid var(--basic-black);
@@ -267,6 +362,8 @@ body {
 }
 
 .appointment .button {
+    display: block;
+    width: 100%;
     margin-top: 10px;
     margin-right: 0;
 }
@@ -291,6 +388,11 @@ body {
 .main-footer li {
     list-style-type: none;
 }
+.main-footer b {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+}
 .footer-adress a {
     text-decoration: underline;
 }
@@ -310,6 +412,12 @@ body {
     text-align: center;
 }
 
+.social-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .footer-social ul {
     width: 141px;
     margin: 0 auto;
@@ -321,21 +429,35 @@ body {
     font-size: 14px;
 }
 
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    background-color: var(--basic-black);
+    color: inherit;
+}
+
+.social-button:hover,
+.social-button:focus {
+    background-color: var(--basic-white);
+}
+
+.social-button:hover path,
+.social-button:focus path {
+    fill: var(--basic-black);
+}
+
 .footer-copyright {
     max-width: 150px;
     margin: 0;
     justify-self: end;
 }
-.social-button {
-    color: inherit;
-}
 
-.social-button:hover, 
-.social-button:focus {
-    background-color: var(--basic-white);
-    color: var(--basic-black);
+.footer-copyright .button {
+    margin-right: 0;
 }
-
 .footer-copyright .button:hover,
 .footer-copyright .button:focus {
     color: var(--basic-black);
