@@ -50,16 +50,93 @@ img {
     clip: rect(0 0 0 0);
     overflow: hidden;
 } */
+
+/* container */
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+
+/* grid */
+
+.page {
+    height: 100%;
+}
+
+.page-body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    align-content: start;
+}
+
+/* Buttons */
+
+.button {
+    display: inline-block;
+
+    font: inherit;
+    text-align: center;
+    color: var(--basic-white);
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: var(--basic-black);
+    border: none;
+
+    margin-right: 16px;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    background-color: var(--special);
+}
+
+.button:disabled,
+.button.disabled {
+    cursor: default;
+    opacity: 0,5;
+    background-color: var(--basic-dark);
+}
+
 /* Navigation */ 
 
 .main-navigation {
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
+
     color: var(--basic-white);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
 }
 .main-nav-wrapper {
     background-color: var(--basic-black);
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 20px 0;
+}
+
+.site-navigation {
+    width: 620px;
+    
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-around;
 }
 .site-navigation li{
     list-style-type: none;
@@ -81,10 +158,32 @@ img {
     background-color: var(--basic-extra-dark);
 }
 
+.user-navigation {
+    max-width: 140px;
+}
+
+.user-navigation .login-link {
+    padding-left: 50px;
+}
+
+.main-logo {
+    order: 2;
+}
+
 /* Features */
+.features {
+    margin-bottom: 80px;
+}
 
 .features-list {
     list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
 }
 
 .fetures-item {
@@ -96,54 +195,100 @@ img {
     line-height: 42px;
 }
 
+.fetures-item p {
+    margin: 0 10px;
+}
+
 /* Index Sections*/
 
 .index-sections {
     color: var(--basic-black);
     background-color: var(--basic-extra-light);
     background-image: url(../img/phon.jpg);
+    background-repeat: no-repeat, repeat;
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
 }
 
 .index-sections h2 {
     font-size: 30px;
     line-height: 40px;
+
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.news {
+    width: 380px;
 }
 
 .news-list {
     list-style-type: none;
 }
 
+.news-item {
+    margin-bottom: 25px;
+}
+
+.news-item p {
+    margin: 0;
+}
+
 .gallery-container {
     background-color: var(--basic-dark);
-    border: 7px solid var(--basic-white)
+    border: 7px solid var(--basic-white);
+    height: 164px;
+    margin: 0;
+    width: 286px;
 }
 
-/* Buttons */
-
-.button {
-    font: inherit;
-    text-align: center;
-    color: var(--basic-white);
-    vertical-align: middle;
-    text-transform: uppercase;
-    background-color: var(--basic-black);
-    border: none;
+.gallery-container a {
+    margin: 0;
+    padding: 0;
+}
+.gallery-container img {
+    width: 286px;
+    height: 164px;
 }
 
-.button:hover,
-.button:active,
-.button:focus {
-    background-color: var(--special);
+.gallery {
+    width: 300px;
 }
 
-.button:disabled,
-.button.disabled {
-    cursor: default;
-    opacity: 0,5;
-    background-color: var(--basic-dark);
+
+/* Contacts */
+
+.contacts {
+    width: 380px;
+}
+
+.contacts p{
+    margin: 0;
+    margin-bottom: 25px;
 }
 
 /* Appointment */
+
+.appointment {
+    width: 300px;
+}
+
+.appointment button {
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.appointment-info {
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+.appointment-item {
+    margin: 0;
+    margin-bottom: 10px;
+}
 
 .appointment-item input{
     font: inherit;
@@ -160,13 +305,25 @@ img {
 .main-footer {
     background-color: var(--basic-extra-dark);
     background-image: url(../img/black-phon.jpg);
+
+    padding: 60px 0 60px 0;
 }
+
+.main-footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+} 
 
 .main-footer a {
     color: var(--basic-white);
 }
 .main-footer li {
     list-style-type: none;
+}
+
+.footer-adress {
+    margin: 0;
+    width: 320px;
 }
 .footer-adress a {
     text-decoration: underline;
@@ -178,11 +335,15 @@ img {
 
 .footer-social {
     text-align: center;
+    width: 300px;
 }
 
 .footer-social ul {
     list-style: none;
+    margin: 0 auto;
+    padding: 0;
 }
+
 
 .footer-social h2 {
     font-size: 14px;
@@ -195,6 +356,12 @@ img {
 .social-button:focus {
     background-color: var(--basic-white);
     color: var(--basic-black);
+}
+
+
+.footer-copyright {
+    width: 220px;
+    justify-self: end;
 }
 
 .footer-copyright .button:hover,
@@ -214,7 +381,16 @@ img {
 .modal-login h2 {
     font-size: 32px;
     line-height: 42px;
+
+    margin: 0;
+    margin-bottom: 20px;
 }
+
+.modal-login p {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
 .login-form input[type="email"], 
 .login-form input[type="password"] {
     font: inherit;
