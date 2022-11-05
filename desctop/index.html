@@ -37,17 +37,17 @@
             <section class="features">
                 <h2 class="visually-hidden">Преимущества</h2>
                 <ul class="features-list">
-                    <li class="fetures-item">
+                    <li class="features-item">
                         <h3>Быстро</h3>
                         <p>МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ — СЧАСТЛИВЫЙ ОБЛАДАТЕЛЬ
                             СТИЛЬНОЙ стрижки-минутки</p>
                     </li>
-                    <li class="fetures-item">
+                    <li class="features-item">
                         <h3>Круто</h3>
                         <p>ЗАБУДЬТЕ, КАК ВЫ СТРИГЛИСЬ РАНЬШЕ.
                             МЫ СДЕЛАЕМ ИЗ ВАС ЗВЕЗДУ ФУТБОЛА ИЛИ КИНО!</p>
                     </li>
-                    <li class="fetures-item">
+                    <li class="features-item">
                         <h3>Дорого</h3>
                         <p>НАШИ МАСТЕРА — ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА И НЕ МОГУТ СТОИТЬ ДЕШЕВО. К ТОМУ ЖЕ, РАЗВЕ ЦЕНА НЕ
                             дает определенный статус?</p>
@@ -183,24 +183,23 @@
                     placeholder="Пароль">
             </p>
             <p class="login-password-info">
-                <label>
-                    <input class="vissually-hidden" id="login-password-info" type="checkbox" name="remember">
-                    <span class="checkbox-indicator"></span>
+                <span class="checkbox-indicator"></span><label>
+                    <input class="visually-hidden" id="login-password-info" type="checkbox" name="remember">
+                    
                     Запомните меня
                 </label>
                 <a class="restore" href="#">Я забыл пароль!</a>
             </p>
-            <button class="button" type="submit">Войти</button>
+            <button class="button login-button" type="submit">Войти</button>
         </form>
-        <button class="modal-close" type="button">Закрыть форму входа</button>
+        <button class="modal-close" type="button" aria-label="Закрыть форму входа"></button>
     </section>
     <section class="modal modal-map">
         <h2 class="visually-hidden">Как до нас добраться</h2>
-        <p>
-            <img src="#" width="780" height="560"
-                alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
-        </p>
-        <button class="modal-close" type="button">Закрыть карту</button>
+        <!-- <img src="../desctop/img/squoosh/Слой 2.jpg" width="780" height="560"
+                alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург"> -->
+        <iframe src="https://yandex.ru/map-widget/v1/-/CCU6ZVQB~D" width="770" height="560" allowfullscreen="true"></iframe>
+        <button class="modal-close" type="button" aria-label="закрыть карту"></button>
     </section>
 </body>
 

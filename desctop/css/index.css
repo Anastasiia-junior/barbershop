@@ -39,6 +39,16 @@ img {
     height: auto;
 }
 
+input{
+    font: inherit;
+    background-color: transparent;
+    border: 2px solid var(--basic-black);
+    width: 100%;
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
 
 .visually-hidden:not(:focus):not(:active), 
 input[type='checkbox'].visually-hidden,
@@ -206,11 +216,11 @@ input[type='radio'].visually-hidden {
     column-gap: 20px;
 }
 
-.fetures-item {
+.features-item {
     text-align: center;
 }
 
-.fetures-item h3 {
+.features-item h3 {
     font-size: 30px;
     line-height: 42px;
     position: relative;
@@ -218,7 +228,7 @@ input[type='radio'].visually-hidden {
     margin-bottom: 60px;
 }
 
-.fetures-item h3::after {
+.features-item h3::after {
     background-color: var(--basic-white);
 
     content: '';
@@ -234,7 +244,7 @@ input[type='radio'].visually-hidden {
     transform: rotate(45deg);
 }
 
-.fetures-item p {
+.features-item p {
     margin: 0 10px;
 }
 
@@ -361,17 +371,6 @@ input[type='radio'].visually-hidden {
     margin-left: 13px;
 }
 
-.appointment-item input{
-    font: inherit;
-    background-color: transparent;
-    border: 2px solid var(--basic-black);
-    width: 100%;
-    padding-top: 8px;
-    padding-left: 15px;
-    padding-bottom: 8px;
-    box-sizing: border-box;
-}
-
 .appointment-item input:focus {
     border-color: var(--special);
 }
@@ -482,11 +481,60 @@ input[type='radio'].visually-hidden {
 /* Modal */
 
 .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
     background-color: var(--basic-extra-light);
     color: var(--basic-black);
     background-image: url(../img/phon.jpg);
-    box-shadow: 0 30px 50px rgba(0, 0, 0, 0,7);
+    background-position: 0 0;
+    background-repeat: repeat;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
 }
+
+.modal-close {
+    position: absolute;
+    border: 0;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    top: 0;
+    right: -34px;
+    background-color: transparent;
+}
+
+.modal-close::after,
+.modal-close::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    width: 19px;
+    height: 3px;
+    background-color: var(--basic-dark);
+}
+
+.modal-close::after {
+    rotate: 45deg;
+}
+
+.modal-close::before {
+    rotate: -45deg;
+}
+
+.modal-login {
+    display: none;
+
+    top: 120px;
+    width: 300px;
+    bottom: auto;
+    padding: 50px 80px;
+}
+
 .modal-login h2 {
     font-size: 32px;
     line-height: 42px;
@@ -523,11 +571,43 @@ input[type='radio'].visually-hidden {
     background-repeat: no-repeat;
 }
 
+.login-password-info {
+    display: flex;
+}
+
+.checkbox-indicator {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--basic-black);
+    margin-right: 12px;
+}
+
+.login-button {
+    width: 100%;
+    margin: 0;
+}
+
+.modal-map {
+    display: none;
+    padding: 5px;
+    top: 5%;
+    width: 780px;
+    bottom: auto;
+}
+
+.modal-map iframe {
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
 /* Restore */
 
 .restore {
     color: var(--basic-black);
     text-decoration: underline;
+    justify-self: end;
 }
 .restore:hover, 
 .restore:focus {
