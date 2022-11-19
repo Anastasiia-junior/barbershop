@@ -67,6 +67,9 @@ main {
     background-repeat: repeat;
 
     color: var(--basic-black);
+
+    padding-top: 58px;
+    padding-bottom: 50px; 
 }
 
 .indicator {
@@ -396,7 +399,7 @@ main {
 }
 
 .item-price {
-    
+
     display: flex;
 }
 
