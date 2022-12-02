@@ -215,7 +215,20 @@ main {
     position: relative;
 }
 
-.login-link::before {
+.login-link-icon {
+    position: absolute;
+    left: 28px;
+    width: 16px;
+    height: 18px;
+    opacity: 50%;
+}
+
+.user-navigation a:hover .login-link-icon, 
+.user-navigation a:focus .login-link-icon {
+    opacity: 100%;
+}
+
+/* .login-link::before {
     content: '';
 
     position: absolute;
@@ -225,7 +238,7 @@ main {
     background-image: url('../img/arrow-right-to-bracket-solid.svg');
     background-repeat: no-repeat;
     background-position: 0 0;
-}
+} */
 
 /* Main */
 

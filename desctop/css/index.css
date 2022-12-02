@@ -183,6 +183,19 @@ input[type='radio'].visually-hidden {
     position: relative;
 }
 
+.login-link-icon {
+    position: absolute;
+    left: 28px;
+    width: 16px;
+    height: 18px;
+    opacity: 50%;
+}
+
+.user-navigation a:hover .login-link-icon, 
+.user-navigation a:focus .login-link-icon {
+    opacity: 100%;
+}
+/*  Не получилось реализовать иконку входа через псевдоэлемент, реализовала через svg 
 .login-link::before {
     content: '';
 
@@ -193,7 +206,7 @@ input[type='radio'].visually-hidden {
     background-image: url('../img/arrow-right-to-bracket-solid.svg');
     background-repeat: no-repeat;
     background-position: 0 0;
-}
+} */
 
 .main-logo {
     order: 2;
@@ -571,16 +584,57 @@ input[type='radio'].visually-hidden {
     background-repeat: no-repeat;
 }
 
-.login-password-info {
+.login-info {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.login-info label {
+    cursor: pointer;
+    position: relative;
+
+    padding-left: 30px;
+}
+
+.login-info label:hover {
+    color: var(--special);
 }
 
 .checkbox-indicator {
-    display: block;
+    position: absolute;
+
+    left: 0px;
+
+    display: inline-flex;
     width: 16px;
     height: 16px;
     border: 2px solid var(--basic-black);
     margin-right: 12px;
+}
+
+.login-input:not(:disabled):checked+span::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    rotate: 45deg;
+    background-color: var(--basic-black);
+
+    top: 7px;
+    left: 2px;
+}
+
+.login-input:not(:disabled):checked+span::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    rotate: -45deg;
+    background-color: var(--basic-black);
+
+    top: 7px;
+    left: 2px;
 }
 
 .login-button {
